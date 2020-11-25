@@ -5,14 +5,20 @@ import Steps from './components/Steps';
 
 function App() {
   const [username, setUsername] = useState(null);
-  // const [progress, setProgress] = useState(null);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [progress, setProgress] = useState([null, null, null]);
 
   return (
     <div className="App">
       { username ? (
         <>
           <p>Hi { username }</p>
-          <Steps />
+          <Steps
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            progress={progress}
+            setProgress={setProgress}
+          />
         </>
       ) : (
         <Welcome onChange={setUsername} />
