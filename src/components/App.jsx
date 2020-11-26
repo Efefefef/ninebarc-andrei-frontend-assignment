@@ -3,9 +3,7 @@ import './App.css';
 import Welcome from './Welcome';
 import Steps from './Steps';
 import Result from './Result';
-
-const FIRST_STEP = 0;
-const RESULT_STEP = 3;
+import { FIRST_STEP, RESULT_STEP } from './constants';
 
 function App() {
   const [username, setUsername] = useState(null);
@@ -17,15 +15,12 @@ function App() {
       <div className="container text-center">
         <div className="row justify-content-center">
           <div className="card col-md-9 col-lg-6">
-            <div className="card-header h4">
-              {username ? (
-                `Dear ${username},`
-              ) : (
-                'Berlin Ticket Adviser'
-              )}
-            </div>
             {username ? (
-                currentStep === RESULT_STEP ? (
+              <>
+                <div className="card-header h4">
+                  {`Dear ${username},`}
+                </div>
+                {currentStep === RESULT_STEP ? (
                   <Result progress={progress}/>
                 ) : (
                   <Steps
@@ -34,10 +29,16 @@ function App() {
                     progress={progress}
                     setProgress={setProgress}
                   />
-                )
-            ): (
-              <Welcome onChange={setUsername}/>
-              )}
+                )}
+              </>
+            ) : (
+              <>
+                <div className="card-header h4">
+                  Berlin Ticket Adviser
+                </div>
+                <Welcome onChange={setUsername}/>
+              </>
+            )}
           </div>
         </div>
       </div>

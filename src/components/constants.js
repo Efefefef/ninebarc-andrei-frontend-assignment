@@ -1,5 +1,10 @@
+export const FIRST_STEP = 0;
+export const SECOND_STEP = 1;
+export const THIRD_STEP = 2;
+export const RESULT_STEP = 3;
+
 export const STEPS = {
-  '0' : {
+  [FIRST_STEP]: {
     question: 'How much time are you planning on staying in the city?',
     answers: [
       '1 day',
@@ -8,7 +13,7 @@ export const STEPS = {
       'longer'
     ]
   },
-  '1': {
+  [SECOND_STEP]: {
     question: 'How many rides do you expect per day?',
     answers: [
       '1',
@@ -17,7 +22,7 @@ export const STEPS = {
       'more'
     ]
   },
-  '2': {
+  [THIRD_STEP]: {
     question: 'Where do you plan to ride?',
     answers: [
       'Just short rides ( 3 U/S-bahn stops or 6 bus/tram stops )',

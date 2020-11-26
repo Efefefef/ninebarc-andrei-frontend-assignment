@@ -12,8 +12,8 @@ export default function Result({ progress }) {
       <div className="py-3">
         <h3>Your choices</h3>
         {Object.entries(STEPS).map(([step, { question, answers }]) => (
-          <div>
-            <p key={step}>{question}</p>
+          <div key={step}>
+            <p>{question}</p>
             <p className=" font-italic">{answers[progress[step]]}</p>
           </div>
         ))}
