@@ -8,16 +8,20 @@ const getTicket = (answers) => {
 
 export default function Result({ progress }) {
   return (
-    <div className="result">
-      <h1>Your choices:</h1>
-      {Object.entries(STEPS).map(([step, { question, answers }]) => (
-        <div>
-        <h2 key={step}>{question}</h2>
-        {answers[progress[step]]}
-        </div>
-      ))}
-      <h1>Result:</h1>
-      {getTicket(progress)}
+    <div className="card-body">
+      <div className="py-3">
+        <h3>Your choices</h3>
+        {Object.entries(STEPS).map(([step, { question, answers }]) => (
+          <div>
+            <p key={step}>{question}</p>
+            <p className=" font-italic">{answers[progress[step]]}</p>
+          </div>
+        ))}
+      </div>
+      <div className="py-3">
+        <h3>We recommend you to get</h3>
+        <p className="font-weight-bold font-italic">{getTicket(progress)} ticket</p>
+      </div>
     </div>
   );
 }

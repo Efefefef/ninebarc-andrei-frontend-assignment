@@ -13,19 +13,16 @@ const Welcome = ({ onChange: setUsername }) => {
   };
 
   return (
-    <div className="welcome">
-      <h1>
-        Welcome to Berlin!
-      </h1>
-      <h2>
+    <div className="card-body">
+      <h3 className="py-3">
         Let me help you to choose a public transport ticket
-      </h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Please enter your username
-          <input type="text" ref={inputEl}/>
-        </label>
-        <input type="submit" value="Submit"/>
+      </h3>
+      <form className="d-flex justify-content-around align-items-baseline py-3" onSubmit={handleSubmit}>
+        <p className="card-text">
+          What's your username?
+        </p>
+        <input type="text" ref={inputEl}/>
+        <button type="submit" className="btn btn-primary">Ok</button>
       </form>
     </div>
   );
