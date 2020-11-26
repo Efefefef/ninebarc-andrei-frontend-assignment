@@ -13,15 +13,15 @@ function App() {
   const [progress, setProgress] = useState([null, null, null]);
 
   return (
-    <div className="main">
+    <div className="main d-flex align-items-center">
       <div className="container text-center">
-        <div className="row justify-content-center pt-5">
+        <div className="row justify-content-center">
           <div className="card col-md-9 col-lg-6">
             <div className="card-header h4">
               {username ? (
-                <p>Dear {username},</p>
+                `Dear ${username},`
               ) : (
-                <p>Berlin Ticket Adviser</p>
+                'Berlin Ticket Adviser'
               )}
             </div>
             {username ? (

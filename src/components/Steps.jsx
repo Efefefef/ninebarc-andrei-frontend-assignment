@@ -2,7 +2,7 @@ import React from "react";
 import { STEPS } from './constants';
 
 export default function Steps({ currentStep, setCurrentStep, progress, setProgress }) {
-  const handleClick = (index) => {
+  const chooseAnswer = (index) => {
     progress[currentStep] = index + 1;
     setProgress(progress);
     setCurrentStep(currentStep += 1);
@@ -15,7 +15,7 @@ export default function Steps({ currentStep, setCurrentStep, progress, setProgre
       </h3>
       <div className="d-flex justify-content-around py-3">
         {STEPS[currentStep].answers.map((answer, index) => (
-          <button className="btn btn-primary" key={index} onClick={() => handleClick(index)}>{answer}</button>
+          <button className="btn btn-primary mx-2" key={index} onClick={() => chooseAnswer(index)}>{answer}</button>
         ))}
       </div>
     </div>

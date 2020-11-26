@@ -18,9 +18,9 @@ export default function Result({ progress }) {
           </div>
         ))}
       </div>
-      <div className="py-3">
+      <div className="pt-3 ">
         <h3>We recommend you to get</h3>
-        <p className="font-weight-bold font-italic">{getTicket(progress)} ticket</p>
+        <p className="font-weight-bold font-italic alert alert-warning mx-5">{getTicket(progress)} ticket</p>
       </div>
     </div>
   );
