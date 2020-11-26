@@ -19,10 +19,10 @@ const Welcome = ({ onChange: setUsername }) => {
       </h3>
       <form className="d-flex justify-content-around align-items-baseline py-3" onSubmit={handleSubmit}>
         <p className="card-text">
-          What's your username?
+          What's your name?
         </p>
         <input type="text" ref={inputEl}/>
-        <button type="submit" className="btn btn-primary">Ok</button>
+        <button type="submit" className="btn btn-primary">Start</button>
       </form>
     </div>
   );
